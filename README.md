@@ -1,7 +1,7 @@
 # Previsão de Receita de Filmes — TMDB 5000 Movies
 
 > Análise exploratória e previsão de receita de filmes usando dados públicos do TMDB.
-> Projeto de portfólio desenvolvido em equipe para vaga de estágio em Ciência de Dados.
+> Projeto de portfólio individual desenvolvido para vaga de estágio em Ciência de Dados.
 
 ---
 
@@ -41,9 +41,16 @@ filme-sucesso-regressao/
 │   └── perguntas.sql           # Consultas SQL sobre os dados do projeto
 │
 ├── images/                     # Gráficos gerados pelos notebooks
+│   ├── 01_orcamento_x_receita.png
+│   ├── 02_receita_por_genero.png
+│   ├── 03_filmes_por_ano.png
+│   ├── 04_top10_lucro.png
+│   └── 05_nota_x_receita.png
 │
-├── app/                        # Deploy do modelo (em desenvolvimento)
+├── app/
+│   └── app.py                  # App interativo com Streamlit
 │
+├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
@@ -58,16 +65,16 @@ filme-sucesso-regressao/
 | Melhor gênero | Animação e Aventura lideram em receita média |
 | Crescimento do mercado | Produção cresceu significativamente a partir dos anos 2000 |
 | Mais lucrativos | Avatar, Star Wars e franquias da Marvel dominam o top 10 |
-| Nota x Receita | Correlação fraca — qualidade não garante bilheteria |
+| Nota x Receita | Correlação fraca (~0.17) — qualidade não garante bilheteria |
 
 ---
 
 ## Ferramentas Utilizadas
 
-- **Python** — Pandas, NumPy, Matplotlib, Seaborn
+- **Python** — Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
 - **SQL** — consultas analíticas sobre os dados limpos
-- **Power BI** — dashboard interativo (em desenvolvimento)
-- **GitHub** — versionamento e colaboração em equipe
+- **Streamlit** — deploy do modelo como app web interativo
+- **GitHub** — versionamento do projeto
 
 ---
 
@@ -76,7 +83,7 @@ filme-sucesso-regressao/
 - **Fonte:** [TMDB 5000 Movie Dataset — Kaggle](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
 - **Volume original:** 4.803 filmes e 20 colunas
 - **Volume após limpeza:** 3.229 filmes e 19 colunas
-- **Remoções:** filmes sem orçamento ou receita registrados, colunas sem relevância analítica
+- **Remoções:** filmes sem orçamento ou receita registrados e colunas sem relevância analítica
 
 ---
 
@@ -90,7 +97,7 @@ cd filme-sucesso-regressao
 
 **2. Instale as dependências**
 ```bash
-pip install pandas numpy matplotlib seaborn jupyter
+pip install -r requirements.txt
 ```
 
 **3. Baixe o dataset**
@@ -102,16 +109,22 @@ Acesse [kaggle.com/datasets/tmdb/tmdb-movie-metadata](https://www.kaggle.com/dat
 01_exploracao.ipynb → 02_limpeza.ipynb → 03_analise.ipynb
 ```
 
+**5. Rode o app**
+```bash
+cd app
+python -m streamlit run app.py
+```
+
 ---
 
-## Equipe e Contribuições
+## Sobre o Projeto
 
-| Integrante | Contribuição |
-|---|---|
-| **Ygor Benicio** | Liderança técnica, estrutura do repositório, notebooks de exploração, limpeza e análise |
-| **Luís** | Consultas SQL e análise por perguntas de negócio |
-| **Gabriel** | Visualizações no Power BI e dashboard |
-| **Arthur** | Documentação, README e revisão geral |
+Desenvolvido por **Ygor Benicio de Siqueira**
+Estudante de Engenharia de Computação — UNISUAM
+Cursando Profissão Cientista de Dados — EBAC
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ygor%20Benicio-blue)](https://www.linkedin.com/in/ygorbenicio)
+[![GitHub](https://img.shields.io/badge/GitHub-YgorBenicio-black)](https://github.com/YgorBenicio)
 
 ---
 
@@ -120,3 +133,4 @@ Acesse [kaggle.com/datasets/tmdb/tmdb-movie-metadata](https://www.kaggle.com/dat
 - [TMDB Movie Metadata — Kaggle](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
 - [Pandas Documentation](https://pandas.pydata.org/docs/)
 - [Seaborn Documentation](https://seaborn.pydata.org/)
+- [Streamlit Documentation](https://docs.streamlit.io/)
