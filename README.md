@@ -110,41 +110,6 @@ filme-sucesso-regressao/
 
 ---
 
-## Como rodar
-
-1. Clone o repositório:
-```bash
-git clone https://github.com/YgorBenicio/filme-sucesso-regressao.git
-cd filme-sucesso-regressao
-
----
-
-## Como Rodar
-
-**1. Clone o repositório**
-```bash
-git clone https://github.com/YgorBenicio/filme-sucesso-regressao.git
-cd filme-sucesso-regressao
-```
-
-**2. Instale as dependências**
-```bash
-pip install -r requirements.txt
-```
-
-**3. Baixe o dataset**
-
-Acesse [kaggle.com/datasets/tmdb/tmdb-movie-metadata](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata), baixe `tmdb_5000_movies.csv` e coloque em `data/raw/`.
-
-**4. Execute os notebooks na ordem**
-```
-01_exploracao.ipynb → 02_limpeza.ipynb → 03_analise.ipynb
-```
-
-**5. Rode o app**
-```bash
-cd app
-python -m streamlit run app.py
 ```
 
 ---
