@@ -1,75 +1,75 @@
 # Previsão de Receita de Filmes — TMDB 5000 Movies
 
-> Meu primeiro projeto de análise de dados, desenvolvido enquanto estudo Ciência de Dados.
-> Usei dados públicos de filmes para aprender na prática como funciona um projeto real de dados do início ao fim.
+> Meu primeiro projeto de análise de dados.  
+> Estou estudando Ciência de Dados e resolvi pegar um dataset real pra tentar fazer um projeto do começo ao fim.
 
 ---
 
-## Por que fiz esse projeto?
+## Por que eu fiz isso?
 
-Estou no início da minha jornada em Ciência de Dados e queria ir além dos exercícios de curso. Decidi pegar um dataset real, escolher um problema que fizesse sentido de verdade e tentar resolver do zero — exploração, limpeza, análise e visualização.
+Tô no começo da jornada ainda e não queria ficar só fazendo os exercícios dos cursos. Queria pegar um dataset de verdade, escolher um problema que fizesse algum sentido e tentar resolver sozinho (na medida do possível).
 
-O tema filmes foi uma escolha intencional: os dados são ricos, intuitivos e qualquer pessoa consegue entender o contexto sem precisar de conhecimento técnico prévio.
+Escolhi filmes porque os dados são fáceis de entender e qualquer pessoa consegue se interessar pelo tema. Não precisa ser expert em cinema pra entender o que tá sendo analisado.
 
-Aprendi muito errando no caminho. Algumas células de código quebraram várias vezes antes de funcionar. Algumas decisões de limpeza precisei pesquisar bastante para entender o motivo. Esse README é um registro honesto do que foi feito e do que aprendi.
-
----
-
-## O Problema
-
-Um estúdio de cinema quer entender o que influencia a receita de um filme antes do lançamento — orçamento investido, gênero, época de lançamento — para tomar decisões mais embasadas sobre marketing e distribuição.
-
-Usei dados reais de mais de 4.800 filmes do TMDB (The Movie Database) para investigar esse problema.
+Errei bastante no caminho. Várias células quebraram, tive que pesquisar bastante coisa e algumas decisões de limpeza eu só entendi depois de um tempo. Esse README é mais um registro do que eu consegui fazer e do que eu aprendi (e do que ainda não sei muito bem).
 
 ---
 
-## Perguntas que quis Responder
+## O problema
 
-- Filmes com maior orçamento faturam mais?
-- Qual gênero de filme gera mais receita em média?
-- A produção de filmes cresceu ao longo dos anos?
-- Quais são os filmes mais lucrativos do dataset?
-- Existe relação entre a nota do público e a receita?
+Imaginei a situação: um estúdio de cinema quer entender o que mais influencia a receita de um filme antes de lançar. Orçamento, gênero, época… coisas assim. Pra tentar tomar decisões melhores de marketing e distribuição.
+
+Usei os dados do TMDB (mais de 4.800 filmes) pra tentar investigar isso.
 
 ---
 
-## O que aprendi em cada etapa
+## Perguntas que eu quis responder
 
-### Exploração dos dados
-Aprendi que antes de qualquer análise é preciso entender o que os dados têm — e o que está faltando. Descobri que colunas como `homepage` e `tagline` tinham mais de 60% de dados vazios, e que os zeros em `budget` e `revenue` não eram zeros de verdade, mas sim dados que não foram informados. Isso muda tudo na análise.
+- Filmes com orçamento maior realmente faturam mais?
+- Qual gênero costuma gerar mais receita em média?
+- A quantidade de filmes produzidos aumentou ao longo dos anos?
+- Quais foram os filmes mais lucrativos nesse dataset?
+- Tem alguma relação forte entre a nota do público e a receita?
 
-### Limpeza dos dados
-Aprendi a diferença entre dado ausente real (`NaN`) e dado ausente disfarçado de zero. Aprendi também por que fazemos uma cópia do DataFrame antes de modificar — para não perder o original se algo der errado. O dataset passou de 4.803 para 3.229 filmes após a limpeza, o que foi esperado.
+---
 
-### Análise e visualizações
-Aprendi a criar gráficos que respondem perguntas concretas, não apenas gráficos bonitos. A descoberta que mais me surpreendeu foi a fraca correlação entre nota do público e receita — um filme pode ser muito bem avaliado e faturar pouco, e vice-versa.
+## O que eu aprendi em cada parte
+
+### Exploração
+Antes de analisar qualquer coisa, precisa olhar bem os dados. Descobri que várias colunas (tipo `homepage` e `tagline`) tinham um monte de valor faltando. E os zeros em `budget` e `revenue` na verdade eram dados que não foram informados. Isso muda bastante a análise.
+
+### Limpeza
+Aprendi a diferença entre `NaN` de verdade e zero que tá “escondendo” dado faltante. Também aprendi a importância de fazer cópia do DataFrame antes de mexer, pra não estragar o original. Depois da limpeza o dataset ficou com 3.229 filmes (antes tinha 4.803).
+
+### Análise e gráficos
+Tentei fazer gráficos que respondessem as perguntas, não só gráficos bonitos. A coisa que mais me surpreendeu foi a correlação fraca entre nota do público e receita (só 0.17). Ou seja, filme bem avaliado não necessariamente fatura muito, e o contrário também acontece.
 
 ### App com Streamlit
-Essa parte foi feita com auxílio de Inteligência Artificial. Ainda não tenho conhecimento suficiente para construir um app do zero sozinho, mas quis incluir porque o projeto fica mais completo com uma interface interativa. Entendi a lógica geral do que o código faz, mas não escreverei que construí essa parte sozinho.
+Essa parte eu fiz com bastante ajuda de IA. Ainda não consigo construir um app sozinho do zero. Quis colocar mesmo assim porque o projeto fica mais completo com uma interface. Entendi a lógica geral do código, mas não vou fingir que fiz tudo sozinho.
 
 ---
 
-## Estrutura do Projeto
+## Estrutura do projeto
 
 ```
 filme-sucesso-regressao/
 │
 ├── data/
-│   ├── raw/                    # Dataset original do Kaggle (não versionado)
-│   └── processed/              # Dataset limpo gerado pelo notebook 02
+│   ├── raw/          # dataset original (não versionado)
+│   └── processed/    # dataset limpo
 │
 ├── notebooks/
-│   ├── 01_exploracao.ipynb     # Exploração inicial
-│   ├── 02_limpeza.ipynb        # Limpeza e tratamento
-│   └── 03_analise.ipynb        # Análise e visualizações
+│   ├── 01_exploracao.ipynb
+│   ├── 02_limpeza.ipynb
+│   └── 03_analise.ipynb
 │
 ├── sql/
-│   └── perguntas.sql           # Consultas SQL sobre os dados
+│   └── perguntas.sql
 │
-├── images/                     # Gráficos gerados pelos notebooks
+├── images/           # gráficos que eu gerei
 │
 ├── app/
-│   └── app.py                  # App Streamlit (desenvolvido com auxílio de IA)
+│   └── app.py        # feito com ajuda de IA
 │
 ├── requirements.txt
 ├── .gitignore
@@ -78,32 +78,44 @@ filme-sucesso-regressao/
 
 ---
 
-## Principais Descobertas
 
-| Pergunta | O que encontrei |
-|---|---|
-| Orçamento x Receita | Correlação de 0.73 — quanto mais se investe, maior a tendência de faturar mais, mas não é regra |
-| Melhor gênero | Animação e Aventura lideram em receita média |
-| Crescimento do mercado | Produção cresceu muito a partir dos anos 2000 |
-| Mais lucrativos | Franquias dominam — Avatar, Star Wars e Marvel no topo |
-| Nota x Receita | Correlação fraca de 0.17 — qualidade e bilheteria são coisas diferentes |
+---
+
+## Principais descobertas
+
+| Pergunta            | O que eu encontrei                                              |
+|---------------------|-----------------------------------------------------------------|
+| Orçamento x Receita | Correlação de 0.73 — quanto mais investe, maior a tendência de faturar, mas não é regra |
+| Melhor gênero       | Animação e Aventura ficaram na frente em receita média          |
+| Crescimento         | A produção de filmes cresceu bastante a partir dos anos 2000    |
+| Mais lucrativos     | Franquias dominam (Avatar, Star Wars, Marvel…)                  |
+| Nota x Receita      | Correlação bem fraca (0.17) — qualidade e bilheteria são coisas diferentes |
 
 ---
 
 ## Ferramentas que usei
 
-- **Python** — foi minha principal ferramenta. Aprendi Pandas, NumPy, Matplotlib e Seaborn na prática aqui
-- **SQL** — escrevi consultas para responder as mesmas perguntas de negócio com outra abordagem
-- **Streamlit** — usado no app, com auxílio de IA
-- **GitHub** — primeira vez versionando um projeto do início ao fim
+- **Python** (Pandas, NumPy, Matplotlib e Seaborn) — aprendi bastante na prática
+- **SQL** — escrevi umas consultas pras mesmas perguntas
+- **Streamlit** — no app (com ajuda de IA)
+- **GitHub** — primeira vez versionando um projeto completo
 
 ---
 
 ## Dataset
 
-- **Fonte:** [TMDB 5000 Movie Dataset — Kaggle](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
-- **Volume original:** 4.803 filmes e 20 colunas
-- **Volume após limpeza:** 3.229 filmes e 19 colunas
+- Fonte: [TMDB 5000 Movie Dataset no Kaggle](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
+- Original: 4.803 filmes e 20 colunas
+- Depois da limpeza: 3.229 filmes e 19 colunas
+
+---
+
+## Como rodar
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/YgorBenicio/filme-sucesso-regressao.git
+cd filme-sucesso-regressao
 
 ---
 
@@ -139,14 +151,13 @@ python -m streamlit run app.py
 
 ## Sobre mim
 
-**Ygor Benicio de Siqueira**
-Estudante de Engenharia de Computação — UNISUAM (previsão: 2030)
+Sobre mim
+Ygor Benicio de Siqueira
+
+Estudante de Engenharia de Computação — UNISUAM (previsão de formatura: 2030)
+
 Cursando Profissão Cientista de Dados — EBAC
-
-Esse é meu primeiro projeto de dados. Estou aprendendo, errando e melhorando. Feedbacks são bem-vindos.
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ygor%20Benicio-blue)](https://www.linkedin.com/in/ygorbenicio)
-[![GitHub](https://img.shields.io/badge/GitHub-YgorBenicio-black)](https://github.com/YgorBenicio)
+Esse é meu primeiro projeto de dados de verdade. Ainda tô aprendendo, errando e tentando melhorar. Qualquer feedback é bem-vindo.
 
 ---
 
