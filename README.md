@@ -119,7 +119,7 @@ filme-sucesso-regressao/
 Sobre mim
 Ygor Benicio de Siqueira
 
-Estudante de Engenharia de Computação — UNISUAM (previsão de formatura: 2030)
+Estudante de Engenharia de Computação — UNISUAM (previsão de formatura: 2029.2)
 
 Cursando Profissão Cientista de Dados — EBAC
 Esse é meu primeiro projeto de dados de verdade. Ainda tô aprendendo, errando e tentando melhorar. Qualquer feedback é bem-vindo.
